@@ -38,12 +38,33 @@ public class javaGuesser{
 				repeat = false;
 				System.out.println("got it!\n\nVery good!");
 			}else{
-			
+				if(num < guess){
+					System.out.println("too high...");
+				}else{
+					System.out.println("too low...");
+				}
 			}//end if statement
 		}//end while loop
 	}
 	public void computerGuesser(){
 		//computer guesses
-		Scanner ui = new Scanner(System.in);	
+		Scanner ui = new Scanner(System.in);
+		int count = 1;
+		boolean repeat = true;
+		int comGuess = 50;
+		String hol; //high or low 
+		while(repeat){
+			System.out.print(count+") I guess "+comGuess+"\nToo (H)igh, too (L)ow, or (C)orrect? ");
+			hol = ui.nextLine();
+			if(hol.equalsIgnoreCase("H")){
+				comGuess *= 0.5;
+			}else if(hol.equalsIgnoreCase("L")){
+				comGuess *= 1.5;
+
+			}else if(hol.equalsIgnoreCase("C")){
+				repeat = false;
+				System.out.println("yay, I got it!!!");
+			}
+		}//end while loop
 	}
 }
