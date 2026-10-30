@@ -1,5 +1,6 @@
 import java.util.Scanner;
 //import random
+import java.util.Random;
 public class javaGuesser{
 	public static void main(String args[]){
 		Scanner ui = new Scanner(System.in);
@@ -22,10 +23,27 @@ public class javaGuesser{
 			}//end of if statement
 		}//end of while loop
 	}//end of main
-	public static playerGuesser(){
+	public void playerGuesser(){
+		//human guesses
 		Scanner ui = new Scanner(System.in);
+		//generate random number
+		Random rand = new Random();
+		int num = rand.nextInt(100);
+		boolean repeat = true;
+		int guess;
+		while(repeat){
+			System.out.println("Please enter a number: ");
+			guess = ui.nextInt();
+			if(num == guess){
+				repeat = false;
+				System.out.println("got it!\n\nVery good!");
+			}else{
+			
+			}//end if statement
+		}//end while loop
 	}
-	public static computerGuesser(){
+	public void computerGuesser(){
+		//computer guesses
 		Scanner ui = new Scanner(System.in);	
 	}
 }
